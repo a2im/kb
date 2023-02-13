@@ -1,18 +1,30 @@
 import './globals.css'
+import MyModal from "../components/modal"
+import { Providers } from '../components/providers';
+import { config } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import MyNavbar from '../components/navbar';
+config.autoAddCss = false
+library.add(fas)
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
-}) {
+}) { 
+  
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
+      <head/>
+      <body className="min-h-screen bg-iwtexture">
+      <Providers> 
+        <MyNavbar/>
+        {children}
+      <MyModal />
+      </Providers>
+      </body>
     </html>
   )
 }
