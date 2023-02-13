@@ -199,6 +199,357 @@ export default function MyNavbar() {
 
                           </ul>
                 </li>
+                <li 
+                  className="
+                  mx-auto
+                  md:px-3 
+                  ">
+                  <Link href="/sales" onClick={() => setNavbar(false)} 
+                  >
+                    <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Sales</h2>
+                  </Link>
+                    <ul className="
+                        mx-auto
+                        md:lvl2
+                        md:rounded-b-3xl
+                        md:bg-black
+                        md:-ml-6
+                        md:px-3
+                        md:pb-3
+                        ">
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/overview" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Overview</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/accounts" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Account Services</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/hardware" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Hardware</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/security" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Security</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/systems" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Systems</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/development" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Development</h2>
+                            </Link>
+                          </li>
+
+                          </ul>
+                </li>
+                <li 
+                  className="
+                  mx-auto
+                  md:px-3 
+                  ">
+                  <Link href="/marketing" onClick={() => setNavbar(false)} 
+                  >
+                    <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Marketing</h2>
+                  </Link>
+                    <ul className="
+                        mx-auto
+                        md:lvl2
+                        md:rounded-b-3xl
+                        md:bg-black
+                        md:-ml-6
+                        md:px-3
+                        md:pb-3
+                        ">
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/overview" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Overview</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/accounts" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Account Services</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/hardware" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Hardware</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/security" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Security</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/systems" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Systems</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/development" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Development</h2>
+                            </Link>
+                          </li>
+
+                          </ul>
+                </li>
+                <li 
+                  className="
+                  mx-auto
+                  md:px-3 
+                  ">
+                  <Link href="/human-resources" onClick={() => setNavbar(false)} 
+                  >
+                    <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Human Resources</h2>
+                  </Link>
+                    <ul className="
+                        mx-auto
+                        md:lvl2
+                        md:rounded-b-3xl
+                        md:bg-black
+                        md:-ml-6
+                        md:px-3
+                        md:pb-3
+                        ">
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/overview" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Overview</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/accounts" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Account Services</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/hardware" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Hardware</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/security" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Security</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/systems" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Systems</h2>
+                            </Link>
+                          </li>
+                          <li className="
+                              md:w-full
+                              md:py-2
+                              ">
+                            <Link href="/operations/development" onClick={() => setNavbar(false)}>
+                            <h2 className="my-3
+                             md:my-0 
+                             text-xl 
+                             hover:scale-105 
+                             md:text-white 
+                             bg-white 
+                             md:bg-transparent 
+                             rounded-3xl 
+                             text-black">Development</h2>
+                            </Link>
+                          </li>
+
+                          </ul>
+                </li>
               </ul>
             </div>
           </div>
