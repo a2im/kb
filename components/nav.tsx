@@ -1,15 +1,20 @@
 'use client';
-
+import { useOnClickOutside } from 'usehooks-ts'
 import Link from 'next/link';
-import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
-import { GET_ANNOUNCEMENTS } from "../lib/gql/queries";
-import { useQuery } from '@apollo/client';
+import React, { useState, useRef } from "react";
 
-export default function MyNavbar() {
-  const ref = useRef();
+export default function MyNavbar({children}) {
+  const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
-  useOnClickOutside(ref, () => setNavbar(false));
+  const handleClickOutside = () => {
+    setNavbar(false)
+  }
+  const handleClickInside = () => {
+    setNavbar(!navbar)
+  }
+  
+  useOnClickOutside(Navref, handleClickOutside)
   return (
     <>
       <nav className="bg-black w-full fixed z-50">
@@ -38,7 +43,7 @@ export default function MyNavbar() {
               <div className="md:hidden">
                 <button
                   className="pr-2 mr-2 pl-2 text-white rounded-md outline-none focus:border-white focus:border"
-                  onClick={() => setNavbar(!navbar)}
+                  onClick={handleClickInside}
                 >
                   {navbar ? (
                     <svg
@@ -79,7 +84,7 @@ export default function MyNavbar() {
                 navbar ? 'block' : 'hidden'
               }`}
             >
-              <ul id="iwnavbar" className="md:lvl1 text-xl relative mx-auto
+              <ul ref={Navref} id="iwnavbar" className="md:lvl1 text-xl relative mx-auto
                   uppercase text-center
               md:flex">
                 <li 
@@ -87,7 +92,7 @@ export default function MyNavbar() {
                   mx-auto
                   md:px-3 
                   ">
-                  <Link href="/operations" onClick={() => setNavbar(false)} 
+                  <Link href="/operations" onClick={handleClickOutside} 
                   >
                     <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Operations</h2>
                   </Link>
@@ -104,7 +109,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/overview" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/overview" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -120,7 +125,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/accounts" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/accounts" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -136,7 +141,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/hardware" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/hardware" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -152,7 +157,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/security" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/security" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -168,7 +173,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/systems" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/systems" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -184,7 +189,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/development" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/development" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -204,7 +209,7 @@ export default function MyNavbar() {
                   mx-auto
                   md:px-3 
                   ">
-                  <Link href="/sales" onClick={() => setNavbar(false)} 
+                  <Link href="/sales" onClick={handleClickOutside} 
                   >
                     <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Sales</h2>
                   </Link>
@@ -221,7 +226,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/overview" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/overview" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -237,7 +242,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/accounts" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/accounts" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -253,7 +258,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/hardware" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/hardware" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -269,7 +274,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/security" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/security" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -285,7 +290,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/systems" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/systems" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -301,7 +306,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/development" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/development" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -321,7 +326,7 @@ export default function MyNavbar() {
                   mx-auto
                   md:px-3 
                   ">
-                  <Link href="/marketing" onClick={() => setNavbar(false)} 
+                  <Link href="/marketing" onClick={handleClickOutside} 
                   >
                     <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Marketing</h2>
                   </Link>
@@ -338,7 +343,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/overview" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/overview" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -354,7 +359,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/accounts" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/accounts" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -370,7 +375,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/hardware" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/hardware" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -386,7 +391,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/security" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/security" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -402,7 +407,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/systems" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/systems" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -418,7 +423,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/development" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/development" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -438,7 +443,7 @@ export default function MyNavbar() {
                   mx-auto
                   md:px-3 
                   ">
-                  <Link href="/human-resources" onClick={() => setNavbar(false)} 
+                  <Link href="/human-resources" onClick={handleClickOutside} 
                   >
                     <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Human Resources</h2>
                   </Link>
@@ -455,7 +460,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/overview" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/overview" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -471,7 +476,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/accounts" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/accounts" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -487,7 +492,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/hardware" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/hardware" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -503,7 +508,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/security" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/security" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -519,7 +524,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/systems" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/systems" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -535,7 +540,7 @@ export default function MyNavbar() {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/development" onClick={() => setNavbar(false)}>
+                            <Link href="/operations/development" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 
                              text-xl 
@@ -550,80 +555,14 @@ export default function MyNavbar() {
 
                           </ul>
                 </li>
+                <li className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105">
+                  {children}
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </nav>
-      <NavbarAnnouncements/>
       </>
   );
-}
-function useOnClickOutside(ref, handler) {
-  useEffect(
-    () => {
-      const listener = (event) => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
-        }
-        handler(event);
-      };
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    },
-    // Add ref and handler to effect dependencies
-    // It's worth noting that because passed in handler is a new ...
-    // ... function on every render that will cause this effect ...
-    // ... callback/cleanup to run every render. It's not a big deal ...
-    // ... but to optimize you can wrap handler in useCallback before ...
-    // ... passing it into this hook.
-    [ref, handler]
-  );
-}
-
-export function NavbarAnnouncements(){
-  const { loading, error, data } = useQuery(GET_ANNOUNCEMENTS, { 
-    variables: {
-      PublicationState: "LIVE",
-      Name: "Indie Week",
-    }});
-    if (error) return <p>Error</p>
-    console.log(data)
-  return (
-    <>
-    <div className="w-full bg-white">
-    <div className="z-40 mx-auto overflow-x-hidden relative flex max-w-5xl gap-10">
-    <div className="animate-marquee top-0 whitespace-nowrap">
-    {data?.announcements.data.map(announcements => (
-        <h3 key={announcements.id} className="text-black text-2xl px-5 mt-10 uppercase">{announcements.attributes.text}</h3>
-        )
-        )}
-    </div>
-    <div className="absolute top-0 animate-marquee2 whitespace-nowrap pt-10">
-    {data?.announcements.data.map(announcements => (
-        <h3 key={announcements.id} className="text-black text-2xl px-5 uppercase">{announcements.attributes.text}</h3>
-        )
-        )}
-    </div>
-    <div className="absolute top-0 animate-marquee3 whitespace-nowrap pt-10">
-    {data?.announcements.data.map(announcements => (
-        <h3 key={announcements.id} className="text-black text-2xl px-5 uppercase">{announcements.attributes.text}</h3>
-        )
-        )}
-    </div>
-    <div className="absolute top-0 animate-marquee4 whitespace-nowrap pt-10">
-    {data?.announcements.data.map(announcements => (
-        <h3 key={announcements.id} className="text-black text-2xl px-5 uppercase">{announcements.attributes.text}</h3>
-        )
-        )}
-    </div>
-    </div>
-    </div>
-    </>
-  )
 }

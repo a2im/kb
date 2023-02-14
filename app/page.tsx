@@ -1,8 +1,18 @@
 import Footer from './footer'
+import MyNavbar from '../components/nav'
+import LoginButton from '../components/login'
+import ModalInfo from '../components/modal-info'
+import MyModal from '../components/modal'
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "pages/api/auth/[...nextauth]"
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions)
   return (
-    <div className="bggradient2">
+    <>
+    <MyNavbar><LoginButton/></MyNavbar>
+    <MyModal><ModalInfo/></MyModal>
+    <div className="bggradient2 relative">
       <title>A2IM Knowledge Base</title>
       <meta
           name="description"
@@ -11,5 +21,6 @@ export default function Home() {
         />
         <Footer/>
     </div>
+    </>
   )
 }
