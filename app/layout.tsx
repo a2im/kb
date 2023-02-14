@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head/>
-      <body className="min-h-screen bg-iwtexture">
+      <body className="min-h-screen">
         <AuthContext>
       <Providers> 
         {children}

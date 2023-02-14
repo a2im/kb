@@ -19,6 +19,10 @@ export default async function Home() {
           content="Founded by independents, for independents, A2IM Indie Week is a four-day conference for the independent music community in the United States."
           key="desc"
         />
+        <div className="py-64 mx-auto max-w-4xl text-black">
+          <h2>Congrats {session.user.name}!!</h2>
+          <p>You've Discovered My secret A2IM Zone!</p>
+        </div>
         <Footer/>
     </div>
     </>

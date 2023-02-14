@@ -36,7 +36,7 @@ export default function MyNavbar({children}) {
                     height: "auto"
                   }} />
                 </div>
-                <h2 className="text-3xl text-white font-bold tracking-normal">KNOWLEDGE-BASE</h2>
+                <h2 className="text-2xl mt-1 text-white font-bold tracking-normal">KNOWLEDGE-BASE</h2>
               </div>
               </a>
               </Link>

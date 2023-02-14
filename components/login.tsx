@@ -6,8 +6,7 @@ export default function LoginButton() {
     if (status === "authenticated") {
       return (
         <>
-        <div className="mx-auto max-w-md">
-          Hi, {session.user.name}!
+        <div className="mx-auto max-w-md my-auto">
           <button className="text-black bg-white px-4 py-1 rounded-md mx-3" onClick={() => signOut()}>Sign out</button>
           </div>
         </>
