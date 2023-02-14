@@ -109,22 +109,6 @@ export default function MyNavbar({children}) {
                               md:w-full
                               md:py-2
                               ">
-                            <Link href="/operations/overview" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Overview</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
                             <Link href="/operations/accounts" onClick={handleClickOutside}>
                             <h2 className="my-3
                              md:my-0 

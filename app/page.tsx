@@ -21,7 +21,7 @@ export default async function Home() {
         />
         <div className="py-64 mx-auto max-w-4xl text-black">
           <h2>Congrats {session.user.name}!!</h2>
-          <p>You've Discovered My secret A2IM Zone!</p>
+          <p>You&apos;ve Discovered My secret A2IM Zone!</p>
         </div>
         <Footer/>
     </div>
