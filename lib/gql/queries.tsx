@@ -208,3 +208,30 @@ query getAnnouncements($PublicationState: PublicationState, $Name: String!) {
     }
   }
   `; 
+
+export const GET_KB_ARTICLES = gql`
+query getKnowledge($PublicationState: PublicationState, $MainCategory: String!, $KbName: String!) {
+  kbArticles(filters: { MainCategory: { eq: $MainCategory }, kb_categories: { Name: { eq : $KbName }} }, publicationState: $PublicationState, pagination: { page: 1, pageSize: 50 }) {
+    data {
+      id
+      attributes {
+        Title
+        Text
+      }
+    }
+  }
+}
+`; 
+
+export const GET_KB_CATEGORIES = gql`
+query getCategories($MainCategory: String!) {
+    kbCategories(filters: { MainCategory: { eq: $MainCategory }}, pagination: { page: 1, pageSize: 50 }) {
+      data {
+        id
+        attributes {
+          Name
+        }
+      }
+    }
+  }
+  `;

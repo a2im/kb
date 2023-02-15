@@ -7,7 +7,7 @@ export default function LoginButton() {
       return (
         <>
         <div className="mx-auto max-w-md my-auto">
-          <button className="text-black bg-white px-4 py-1 rounded-md mx-3" onClick={() => signOut()}>Sign out</button>
+          <button className="text-black bg-white px-4 rounded-md mx-3 my-auto" onClick={() => signOut()}>Sign out</button>
           </div>
         </>
       )
@@ -16,7 +16,7 @@ export default function LoginButton() {
       <>
       <div className="mx-auto max-w-md">
         Not signed in <br />
-        <button className="text-black bg-white px-4 py-1 rounded-md" onClick={() => signIn()}>Sign in</button>
+        <button className="text-black bg-white px-4  rounded-md my-auto" onClick={() => signIn()}>Sign in</button>
         </div>
       </>
     )

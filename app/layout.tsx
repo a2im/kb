@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head/>
-      <body className="min-h-screen">
+      <body className="bg-a2imblue min-h-screen">
         <AuthContext>
       <Providers> 
         {children}

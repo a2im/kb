@@ -12,7 +12,7 @@ export default async function Home() {
     <>
     <MyNavbar><LoginButton/></MyNavbar>
     <MyModal><ModalInfo/></MyModal>
-    <div className="bggradient2 relative">
+    <div className="bg:a2imblue relative">
       <title>A2IM Knowledge Base!!!</title>
       <meta
           name="description"

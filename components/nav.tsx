@@ -3,6 +3,7 @@ import { useOnClickOutside } from 'usehooks-ts'
 import Link from 'next/link';
 import Image from "next/image";
 import React, { useState, useRef } from "react";
+import { GetCategories } from './get-categories';
 
 export default function MyNavbar({children}) {
   const Navref = useRef();
@@ -17,7 +18,7 @@ export default function MyNavbar({children}) {
   useOnClickOutside(Navref, handleClickOutside)
   return (
     <>
-      <nav className="bg-black w-full fixed z-50">
+      <nav className="bg-stone-800 w-full fixed z-50">
         <div className="justify-between max-w-6xl mx-auto items-center md:flex">
           <div>
             <div className="flex items-center justify-between md:block">
@@ -36,7 +37,7 @@ export default function MyNavbar({children}) {
                     height: "auto"
                   }} />
                 </div>
-                <h2 className="text-2xl mt-1 text-white font-bold tracking-normal">KNOWLEDGE-BASE</h2>
+                <h2 className="text-2xl text-white font-bold tracking-normal whitespace-nowrap">KNOWLEDGE-BASE</h2>
               </div>
               </a>
               </Link>
@@ -80,466 +81,30 @@ export default function MyNavbar({children}) {
           </div>
           <div>
             <div
-              className={`flex-1 py-10 md:py-0 justify-center md:block ${
+              className={`flex-1 justify-center md:block ${
                 navbar ? 'block' : 'hidden'
               }`}
             >
-              <ul ref={Navref} id="iwnavbar" className="md:lvl1 text-xl relative mx-auto
+              <ul ref={Navref} id="iwnavbar" className="md:lvl1 list-none text-xl relative mx-auto
                   uppercase text-center
               md:flex">
-                <li 
-                  className="
-                  mx-auto
-                  md:px-3 
-                  ">
-                  <Link href="/operations" onClick={handleClickOutside} 
-                  >
-                    <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Operations</h2>
-                  </Link>
-                    <ul className="
-                        mx-auto
-                        md:lvl2
-                        md:rounded-b-3xl
-                        md:bg-black
-                        md:-ml-6
-                        md:px-3
-                        md:pb-3
-                        ">
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/accounts" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Account Services</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/hardware" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Hardware</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/security" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Security</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/systems" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Systems</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/development" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Development</h2>
-                            </Link>
-                          </li>
-
-                          </ul>
+                <li className="my-auto">
+                  <h3 className="-mt-3 text-xl px-2 whitespace-nowrap">Operations</h3>
+                <GetCategories MainCategory='Operations'/>
                 </li>
-                <li 
-                  className="
-                  mx-auto
-                  md:px-3 
-                  ">
-                  <Link href="/sales" onClick={handleClickOutside} 
-                  >
-                    <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Sales</h2>
-                  </Link>
-                    <ul className="
-                        mx-auto
-                        md:lvl2
-                        md:rounded-b-3xl
-                        md:bg-black
-                        md:-ml-6
-                        md:px-3
-                        md:pb-3
-                        ">
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/overview" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Overview</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/accounts" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Account Services</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/hardware" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Hardware</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/security" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Security</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/systems" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Systems</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/development" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Development</h2>
-                            </Link>
-                          </li>
-
-                          </ul>
+                <li>
+                  <h3 className="-mt-3 text-xl px-2 whitespace-nowrap my-auto">Sales</h3>
+                <GetCategories MainCategory='Sales'/>
                 </li>
-                <li 
-                  className="
-                  mx-auto
-                  md:px-3 
-                  ">
-                  <Link href="/marketing" onClick={handleClickOutside} 
-                  >
-                    <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Marketing</h2>
-                  </Link>
-                    <ul className="
-                        mx-auto
-                        md:lvl2
-                        md:rounded-b-3xl
-                        md:bg-black
-                        md:-ml-6
-                        md:px-3
-                        md:pb-3
-                        ">
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/overview" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Overview</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/accounts" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Account Services</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/hardware" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Hardware</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/security" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Security</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/systems" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Systems</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/development" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Development</h2>
-                            </Link>
-                          </li>
-
-                          </ul>
+                <li> 
+                <h3 className="-mt-3 text-xl px-2 whitespace-nowrap my-auto">Marketing</h3>
+                <GetCategories MainCategory='Marketing'/>
                 </li>
-                <li 
-                  className="
-                  mx-auto
-                  md:px-3 
-                  ">
-                  <Link href="/human-resources" onClick={handleClickOutside} 
-                  >
-                    <h2 className="my-3 md:my-0 text-xl hover:scale-105 md:text-white bg-white md:bg-transparent rounded-3xl text-black">Human Resources</h2>
-                  </Link>
-                    <ul className="
-                        mx-auto
-                        md:lvl2
-                        md:rounded-b-3xl
-                        md:bg-black
-                        md:-ml-6
-                        md:px-3
-                        md:pb-3
-                        ">
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/overview" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Overview</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/accounts" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Account Services</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/hardware" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Hardware</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/security" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Security</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/systems" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Systems</h2>
-                            </Link>
-                          </li>
-                          <li className="
-                              md:w-full
-                              md:py-2
-                              ">
-                            <Link href="/operations/development" onClick={handleClickOutside}>
-                            <h2 className="my-3
-                             md:my-0 
-                             text-xl 
-                             hover:scale-105 
-                             md:text-white 
-                             bg-white 
-                             md:bg-transparent 
-                             rounded-3xl 
-                             text-black">Development</h2>
-                            </Link>
-                          </li>
-
-                          </ul>
+                <li>
+                <h3 className="-mt-3 text-xl px-2 whitespace-nowrap my-auto">Human Resources</h3>
+                <GetCategories MainCategory='Human Resources'/>
                 </li>
-                <li className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105">
+                <li className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105 my-auto">
                   {children}
                 </li>
               </ul>

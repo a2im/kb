@@ -57,6 +57,7 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
       'iwred': '#FF1827',
+      'a2imblue': '#004BD9'
     }),
     columns: {
       auto: 'auto',
