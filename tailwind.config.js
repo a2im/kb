@@ -134,6 +134,7 @@ module.exports = {
       marquee2: 'marquee2 15s linear infinite',
       marquee3: 'marquee3 15s linear infinite',
       marquee4: 'marquee4 15s linear infinite',
+      text: 'text 5s ease infinite',
     },
     aria: {
       checked: 'checked="true"',
@@ -560,6 +561,16 @@ module.exports = {
       full: '100%',
     }),
     keyframes: {
+      text: {
+        '0%, 100%': {
+          'background-size': '200% 200%',
+          'background-position': 'left center',
+        },
+        '50%': {
+          'background-size': '200% 200%',
+          'background-position': 'right center',
+        },
+      },
       spin: {
         to: {
           transform: 'rotate(360deg)',

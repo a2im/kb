@@ -4,8 +4,10 @@ import Link from 'next/link';
 import Image from "next/image";
 import React, { useState, useRef } from "react";
 import { GetCategories } from './get-categories';
+import { useRouter } from "next/navigation";
 
 export default function MyNavbar({children}) {
+  const router = useRouter()
   const Navref = useRef();
   const [navbar, setNavbar] = useState(false);
   const handleClickOutside = () => {
@@ -88,20 +90,20 @@ export default function MyNavbar({children}) {
               <ul ref={Navref} id="iwnavbar" className="md:lvl1 list-none text-xl relative mx-auto
                   uppercase text-center
               md:flex">
-                <li className="my-auto">
-                  <h3 className="-mt-3 text-xl px-2 whitespace-nowrap">Operations</h3>
+                <li className="my-auto ">
+                <Link href={`/Operations`} onClick={() => router.push(`/Operations`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Operations</h3></Link>
                 <GetCategories MainCategory='Operations'/>
                 </li>
                 <li>
-                  <h3 className="-mt-3 text-xl px-2 whitespace-nowrap my-auto">Sales</h3>
+                <Link href={`/Sales`} onClick={() => router.push(`/Sales`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Sales</h3></Link>
                 <GetCategories MainCategory='Sales'/>
                 </li>
                 <li> 
-                <h3 className="-mt-3 text-xl px-2 whitespace-nowrap my-auto">Marketing</h3>
+                <Link href={`/Marketing`} onClick={() => router.push(`/Marketing`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Marketing</h3></Link>
                 <GetCategories MainCategory='Marketing'/>
                 </li>
                 <li>
-                <h3 className="-mt-3 text-xl px-2 whitespace-nowrap my-auto">Human Resources</h3>
+                <Link href={`/Human Resources`} onClick={() => router.push(`/Human Resources`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Human Resources</h3></Link>
                 <GetCategories MainCategory='Human Resources'/>
                 </li>
                 <li className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105 my-auto">

@@ -152,11 +152,19 @@
   a {
     color: blue;
   }
+  .font-outline-2 {
+    -webkit-text-stroke: 2px black;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
+  }
 }
 
 .kbarticle li {
   list-style: inside;
 }
+
+
 @media only screen and (max-width: 600px) {
   li > ul { display: inline; }
   li:hover > ul { display: inline; }
