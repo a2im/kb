@@ -82,11 +82,7 @@ export default function MyNavbar({children}) {
             </div>
           </div>
           <div>
-            <div
-              className={`flex-1 justify-center md:block ${
-                navbar ? 'block' : 'hidden'
-              }`}
-            >
+            <div className={`flex-1 justify-center md:block ${navbar ? 'block overflow-auto' : 'hidden'}`}>
               <ul ref={Navref} id="iwnavbar" className="md:lvl1 list-none text-xl relative mx-auto
                   uppercase text-center
               md:flex">

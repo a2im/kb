@@ -20,7 +20,7 @@ export function GetCategories({MainCategory}) {
         {/* Map through the data */}
         {data?.kbCategories.data.map(kbCategories => (
                 <li key={kbCategories.id} className="text-stone-800 border-2 rounded-xl bg-stone-100 border-black">
-                   <Link href={`/${MainCategory}/${kbCategories.attributes.Name}`} onClick={() => router.push(`/${MainCategory}/${kbCategories.attributes.Name}`)}><h3 className="text-xl hover:scale-105 px-3 -mt-3">{kbCategories.attributes.Name}</h3></Link>
+                   <Link href={`/${MainCategory}/${kbCategories.attributes.Name}`} onClick={() => router.push(`/${MainCategory}/${kbCategories.attributes.Name}`)}><h3 className="text-xl hover:scale-[1.01] px-3 -mt-3">{kbCategories.attributes.Name}</h3></Link>
                 </li>
               )
             )}

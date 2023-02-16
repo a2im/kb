@@ -22,10 +22,12 @@ export default async function OperationsDevelopment({params}: { params: {
     <>
     <MyNavbar><LoginButton/></MyNavbar>
     <MyModal><ModalInfo/></MyModal>
-    <h2 className="mx-auto max-w-5xl pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle}</h2>
-    <div className="flex flex-row">
+    <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle}</h2>
+    <div className="flex flex-col-reverse md:flex-row max-w-6xl mx-auto">
+      <div className="invisible md:visible md:display shrink">
     <ScrollNav posts={posts} KbName={params.KbName}/>
-        <div className="grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden">
+    </div>
+        <div className="grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden px-5">
         {/* Map through the data */}
         {posts?.data?.map(posts => (
                 <section id={posts.attributes.Title} key={posts.id} className="text-stone-800 border-2 rounded-xl bg-stone-100 p-10 border-black">
