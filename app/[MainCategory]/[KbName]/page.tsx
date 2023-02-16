@@ -6,12 +6,13 @@ import MyModal from '../../../components/modal'
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
 import MyLineBreak from '@/components/linebreak'
+import ScrollNav from '@/components/scroll-nav'
 
 
 export default async function OperationsDevelopment({params}: { params: { 
-  MainCategory : String,
-  KbName: String,
-  slug: String,
+  MainCategory : string,
+  KbName: string,
+  slug: string,
  }}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/kb-articles?filters[MainCategory][$eq]=${params.MainCategory}&filters[kb_categories][Name][$eq]=${params.KbName}`);
   const posts = await res.json()
@@ -22,19 +23,21 @@ export default async function OperationsDevelopment({params}: { params: {
     <MyNavbar><LoginButton/></MyNavbar>
     <MyModal><ModalInfo/></MyModal>
     <h2 className="mx-auto max-w-5xl pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle}</h2>
-    
-        <div className=" grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden">
+    <div className="flex flex-row">
+    <ScrollNav posts={posts} KbName={params.KbName}/>
+        <div className="grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden">
         {/* Map through the data */}
-        {posts?.data.map(posts => (
-                <div key={posts.id} className="text-stone-800 border-2 rounded-xl bg-stone-100 p-10 border-black">
+        {posts?.data?.map(posts => (
+                <section id={posts.attributes.Title} key={posts.id} className="text-stone-800 border-2 rounded-xl bg-stone-100 p-10 border-black">
                   <h2 >{posts.attributes.Title}</h2>
                   <MyLineBreak/>
                   <div className="max-w-4xl">
-                  <p className="kbarticle"><ReactMarkdown className="line-break list-inside" remarkPlugins={[remarkGfm]}>{posts.attributes.Text}</ReactMarkdown></p>
+                  <span className="kbarticle"><ReactMarkdown className="line-break list-inside" remarkPlugins={[remarkGfm]}>{posts.attributes.Text}</ReactMarkdown></span>
                   </div>
-                </div>
+                </section>
               )
             )}
+        </div>
         </div>
     <Footer/>
     </>
@@ -51,3 +54,4 @@ export async function generateStaticParams(
     KbName: data?.attributes?.Name,
   }));
 }
+
