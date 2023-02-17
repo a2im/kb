@@ -10,11 +10,15 @@ module.exports = {
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
-    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    NEXT_AUTH_AWS_REGION: process.env.NEXT_AUTH_AWS_REGION,
+    NEXT_AUTH_AWS_ACCESS_KEY: process.env.NEXT_AUTH_AWS_ACCESS_KEY,
+    NEXT_AUTH_AWS_SECRET_KEY: process.env.NEXT_AUTH_AWS_SECRET_KEY,
   },
   images: {
     domains: [
       'a2im-strapi-cms-images.s3.amazonaws.com',
+      '*.googleusercontent.com'
     ],
     remotePatterns: [
       {
@@ -22,6 +26,12 @@ module.exports = {
         hostname: 'a2im-strapi-cms-images.s3.amazonaws.com',
         port: '80',
         pathname: '/***',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/**',
       },
     ],
     dangerouslyAllowSVG: true,

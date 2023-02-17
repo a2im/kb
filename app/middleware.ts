@@ -7,8 +7,10 @@ export default withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token }) => token?.role === "admin",
-    },
+      authorized({ req , token }) {
+        if(token) return true // If there is a token, the user is authenticated
+      }
+    }
   }
 )
 

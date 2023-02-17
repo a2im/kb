@@ -1,8 +1,4 @@
 import Footer from '../../footer'
-import MyNavbar from '../../../components/nav'
-import LoginButton from '../../../components/login'
-import ModalInfo from '../../../components/modal-info'
-import MyModal from '../../../components/modal'
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
 import MyLineBreak from '@/components/linebreak'
@@ -20,8 +16,6 @@ export default async function OperationsDevelopment({params}: { params: {
   var cleantitle = title.replace('%20',' ')
   return (
     <>
-    <MyNavbar><LoginButton/></MyNavbar>
-    <MyModal><ModalInfo/></MyModal>
     <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle}</h2>
     <div className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto">
       <div className="invisible md:visible md:display shrink">
@@ -30,7 +24,7 @@ export default async function OperationsDevelopment({params}: { params: {
         <div className="grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden px-5">
         {/* Map through the data */}
         {posts?.data?.map(posts => (
-                <section id={posts.attributes.Title} key={posts.id} className="text-stone-800 border-2 rounded-xl bg-stone-100 p-10 border-black">
+                <section id={posts.attributes.Title} key={posts.id} className="articlesection text-stone-800 border-2 rounded-xl bg-stone-100 p-10 border-black">
                   <h2 >{posts.attributes.Title}</h2>
                   <MyLineBreak/>
                   <div className="max-w-4xl">

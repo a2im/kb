@@ -1,11 +1,8 @@
-import Footer from './footer'
-import MyNavbar from '../components/nav'
-import LoginButton from '../components/login'
-import ModalInfo from '../components/modal-info'
-import MyModal from '../components/modal'
+import Footer from '../footer'
 import { authOptions } from 'pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import Image from 'next/image'
+import ThemeToggle from '@/components/theme-switcher'
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
@@ -19,7 +16,9 @@ export default async function Home() {
           key="desc"
         />
         <div className="py-64 mx-auto max-w-3xl">
+          <ThemeToggle/>
         <div className="rounded-full max-w-[100px] relative overflow-hidden">
+          
           <Image src={session.user.image} 
           className="inline-block"
           alt="profile photo"
@@ -32,7 +31,14 @@ export default async function Home() {
                   }}>
 
                   </Image></div>
-          <h2 className="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">Congrats, {session.user.name}!</h2>
+          <h2 className="animate-text 
+          bg-gradient-to-r 
+          from-teal-500 
+          via-purple-500 
+          to-orange-500 
+          bg-clip-text 
+          text-transparent">
+            Congrats, {session.user.name}!</h2>
           <p>You&apos;ve Discovered a <span className="animate-pulse">secret</span> A2IM Zone!</p>
         </div>
         <Footer/>

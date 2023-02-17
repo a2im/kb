@@ -21,7 +21,7 @@ export default function MyNavbar({children}) {
   return (
     <>
       <nav className="bg-stone-800 w-full fixed z-50">
-        <div className="justify-between max-w-6xl mx-auto items-center md:flex">
+        <div className="justify-between max-w-7xl mx-auto items-center md:flex">
           <div>
             <div className="flex items-center justify-between md:block">
               <Link href={"/"} legacyBehavior>
@@ -81,7 +81,7 @@ export default function MyNavbar({children}) {
               </div>
             </div>
           </div>
-          <div>
+          <div className="flex flex-col md:flex-row">
             <div className={`flex-1 justify-center md:block ${navbar ? 'block overflow-auto' : 'hidden'}`}>
               <ul ref={Navref} id="iwnavbar" className="md:lvl1 list-none text-xl relative mx-auto
                   uppercase text-center
@@ -102,11 +102,8 @@ export default function MyNavbar({children}) {
                 <Link href={`/Human Resources`} onClick={() => router.push(`/Human Resources`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Human Resources</h3></Link>
                 <GetCategories MainCategory='Human Resources'/>
                 </li>
-                <li className="text-center font-serif text-zinc-500 whitespace-nowrap hover:scale-105 my-auto">
-                  {children}
-                </li>
               </ul>
-            </div>
+            </div> {children}
           </div>
         </div>
       </nav>

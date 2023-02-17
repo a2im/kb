@@ -1,8 +1,4 @@
 import Footer from '../footer'
-import MyNavbar from '../../components/nav'
-import LoginButton from '../../components/login'
-import ModalInfo from '../../components/modal-info'
-import MyModal from '../../components/modal'
 
 export default async function MainCategory({params}: { params: { 
   MainCategory : String,
@@ -11,8 +7,6 @@ export default async function MainCategory({params}: { params: {
   var cleantitle = title.replace('%20',' ')
   return (
     <>
-    <MyNavbar><LoginButton/></MyNavbar>
-    <MyModal><ModalInfo/></MyModal>
     <h2 className="mx-auto max-w-5xl pt-20 pb-10 text-center drop-shadow-2xl">{cleantitle}</h2>
     
         <div className=" grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden"></div>
