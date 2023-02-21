@@ -10,7 +10,7 @@ export default async function OperationsDevelopment({params}: { params: {
   KbName: string,
   slug: string,
  }}) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/kb-articles?filters[MainCategory][$eq]=${params.MainCategory}&filters[kb_categories][Name][$eq]=${params.KbName}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/kb-articles?filters[MainCategory][$eq]=${params.MainCategory}&filters[kb_categories][Name][$eq]=${params.KbName}`, { next: { revalidate: 10 } });
   const posts = await res.json()
   var title = params.KbName
   var cleantitle = title.replace('%20',' ')
