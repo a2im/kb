@@ -1,5 +1,12 @@
 import Footer from '../footer'
 
+export const dynamic = 'force-dynamic',
+  dynamicParams = true,
+  revalidate = false,
+  fetchCache = 'auto',
+  runtime = 'nodejs',
+  preferredRegion = 'auto'
+  
 export default async function MainCategory({params}: { params: { 
   MainCategory : String,
  }}) {

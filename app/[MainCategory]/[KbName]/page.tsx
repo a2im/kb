@@ -4,6 +4,12 @@ import remarkGfm from 'remark-gfm'
 import MyLineBreak from '@/components/linebreak'
 import ScrollNav from '@/components/scroll-nav'
 
+export const dynamic = 'force-dynamic',
+  dynamicParams = true,
+  revalidate = false,
+  fetchCache = 'auto',
+  runtime = 'nodejs',
+  preferredRegion = 'auto'
 
 export default async function OperationsDevelopment({params}: { params: { 
   MainCategory : string,
