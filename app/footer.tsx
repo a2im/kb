@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from 'next/link'
 import React from "react";
-import { SocialFollowBlack } from "../components/SocialFollow";
+import SocialFollow from "../components/social-follow";
 
 
 export default function Footer() {
@@ -21,7 +21,7 @@ export default function Footer() {
                   height: "auto"
                 }} />
             </Link>
-            <SocialFollowBlack />
+            <SocialFollow color='black'/>
             </div>
         </div>
     </footer>
