@@ -2,6 +2,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon
+ } from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeToggle() {
     const [isEnabled, setIsEnabled] = useState(true);
@@ -42,8 +44,8 @@ export default function ThemeToggle() {
           {isEnabled ? "Enable Light Mode" : "Enable Dark Mode"}
           </span>
           <div className="icons">
-          <FontAwesomeIcon icon="fa-solid fa-sun" />
-          <FontAwesomeIcon icon="fa-solid fa-moon" />
+          <FontAwesomeIcon icon={faSun} className="text-black"/>
+          <FontAwesomeIcon icon={faMoon} className="text-black"/>
       </div>
           <input
             id="toggle"
@@ -51,6 +53,7 @@ export default function ThemeToggle() {
             type="checkbox"
             checked={isEnabled}
             onClick={toggleState}
+            readOnly
           />
         </div>
       </label>

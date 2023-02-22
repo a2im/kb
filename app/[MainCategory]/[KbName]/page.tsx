@@ -16,7 +16,7 @@ export default async function OperationsDevelopment({params}: { params: {
   KbName: string,
   slug: string,
  }}) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/kb-articles?filters[MainCategory][$eq]=${params.MainCategory}&filters[kb_categories][Name][$eq]=${params.KbName}`, { next: { revalidate: 10 } });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/kb-articles?filters[MainCategory][$eq]=${params.MainCategory}&filters[kb_categories][Name][$eq]=${params.KbName}`, { next: { revalidate: 60 }});
   const posts = await res.json()
   var title = params.KbName
   var cleantitle = title.replace('%20',' ')
@@ -46,14 +46,4 @@ export default async function OperationsDevelopment({params}: { params: {
   )
 }
 
-export async function generateStaticParams(
-) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/kb-categories?populate=*`);
-  const data = await res.json();
-  return data?.data?.map((data) => ({
-    id: data.id,
-    MainCategory: data?.attributes?.MainCategory,
-    KbName: data?.attributes?.Name,
-  }));
-}
 

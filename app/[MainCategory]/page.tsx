@@ -28,14 +28,4 @@ export default async function MainCategory({params}: { params: {
   )
 }
 
-export async function generateStaticParams(
-  ) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/kb-categories?populate=*`, { next: { revalidate: 10 } });
-    const data = await res.json();
-    return data?.data?.map((data) => ({
-      id: data.id,
-      MainCategory: data?.attributes?.MainCategory,
-      KbName: data?.attributes?.Name,
-    }));
-  }
   
