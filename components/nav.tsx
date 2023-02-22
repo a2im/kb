@@ -90,6 +90,10 @@ export default function MyNavbar({children}) {
                 <Link href={`/Operations`} onClick={() => router.push(`/Operations`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Operations</h3></Link>
                 <GetCategories MainCategory='Operations'/>
                 </li>
+                <li className="my-auto ">
+                <Link href={`/Events`} onClick={() => router.push(`/Events`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Events</h3></Link>
+                <GetCategories MainCategory='Events'/>
+                </li>
                 <li>
                 <Link href={`/Sales`} onClick={() => router.push(`/Sales`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Sales</h3></Link>
                 <GetCategories MainCategory='Sales'/>
