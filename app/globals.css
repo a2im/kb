@@ -104,6 +104,17 @@
 }
 
 /* end accordion styles */
+:root {
+  --black: #171717;
+  --grey: #262626;
+  --white: #d4d4d4;
+  --red:#ff1827;
+  --articlebackground: var(--white);
+  --articleforeground: var(--black);
+  --background: var(--white);
+  --foreground: var(--black);
+    --transition: 0.5s ease;
+}
 
 @layer base {
   html {
@@ -111,7 +122,6 @@
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
       background: var(--white);
-      color: var(--foreground);
       transition: color var(--transition);
     }
   html::before {
@@ -124,6 +134,10 @@
       transition: transform var(--transition);
       z-index: 0;
     }
+    html.dark section a {
+      color: #60a5fa
+    }
+
   h2 {
       font-family: Righteous;
       letter-spacing: 2px;
@@ -161,9 +175,7 @@
   html::-webkit-scrollbar {
     display: none;
   }
-  a {
-    color: blue;
-  }
+
   a:hover {
     --tw-scale-x: 1.01;
     --tw-scale-y: 1.01;
@@ -186,6 +198,16 @@ a:hover {
 .kbarticle li {
   list-style: inside;
 }
+
+.navigation a {
+  color: blue;
+}
+
+.navigation.dark a {
+  color: #60a5fa;
+}
+
+
 
 .kbarticle link:hover {
   --tw-scale-x: 1.01;
@@ -424,10 +446,6 @@ td.wp-block-table {
 /* Your own custom utilities */
 
 
-
-
-
-
 .preload {
   display: none;
 }
@@ -474,22 +492,13 @@ td.wp-block-table {
   position: absolute;
 }
 
+
 * {
   box-sizing: border-box;
     /* Make sure all elements are above the background */
   z-index: 1;
   position: relative;
 }
-
-:root {
-  --black: #004BD9;
-  --white: #f5f5f5;
-  --red:#ff1827;
-  --background: var(--white);
-  --foreground: var(--black);
-    --transition: 0.5s ease;
-}
-
 
 .toggle .hidden {
   clip: rect(0 0 0 0);
@@ -509,7 +518,7 @@ td.wp-block-table {
 .toggle {
   height: 25px;
   width: 60px;
-  background: var(--foreground);
+  background: var(--background);
   transition: background var(--transition);
   border-radius: 40px;
   padding: 3px;
@@ -524,7 +533,7 @@ td.wp-block-table {
   height: 20px;
   width: 20px;
   border-radius: 30px;
-  background: var(--background);
+  background: var(--foreground);
   transition: transform var(--transition), background var(--transition);
   position: absolute;
   z-index: 2;
@@ -558,6 +567,6 @@ td.wp-block-table {
 }
 
 /* When the darkmode class is applied, set the pseudo element position to 0 */
-.darkmode::before {
+.dark::before {
   transform: translateX(0);
 }

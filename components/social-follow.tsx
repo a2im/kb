@@ -12,8 +12,7 @@ import {
   import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function SocialFollow({color}:{color: string}) {
-  const textcolor = `text-${color}`
+export default function SocialFollow() {
   return (
     <div className="social-container items-center content-center grid grid-cols-5 p-8 gap-8">           
       <motion.button 
@@ -21,7 +20,7 @@ export default function SocialFollow({color}:{color: string}) {
       whileTap={{scale: 0.95}}>
         <Link
           href="https://youtu.be/mV5DSttNOPE"
-          className={`youtube social ${textcolor}`}
+          className={`youtube social text-black dark:text-white`}
           passHref
           target="_blank"
           rel="noopener noreferrer">
@@ -33,7 +32,7 @@ export default function SocialFollow({color}:{color: string}) {
       whileTap={{scale: 0.95}}>
         <Link
           href="https://www.facebook.com/independentlabels/"
-          className={`facebook social ${textcolor}`}
+          className={`facebook social text-black dark:text-white`}
           passHref
           target="_blank"
           rel="noopener noreferrer">
@@ -45,7 +44,7 @@ export default function SocialFollow({color}:{color: string}) {
       whileTap={{scale: 0.95}}>
         <Link
           href="https://twitter.com/LiberaAwards"
-          className={`twitter social ${textcolor}`}
+          className={`twitter social text-black dark:text-white`}
           passHref
           target="_blank"
           rel="noopener noreferrer">
@@ -57,7 +56,7 @@ export default function SocialFollow({color}:{color: string}) {
       whileTap={{scale: 0.95}}>
         <Link
           href="https://www.instagram.com/LiberaAwards/"
-          className={`instagram social ${textcolor}`}
+          className={`instagram social text-black dark:text-white`}
           passHref
           target="_blank"
           rel="noopener noreferrer">
@@ -69,7 +68,7 @@ export default function SocialFollow({color}:{color: string}) {
       whileTap={{scale: 0.95}}>
         <Link
           href="https://www.linkedin.com/company/a2im-american-association-of-independent-music"
-          className={`linkedin social ${textcolor}`}
+          className={`linkedin social text-black dark:text-white`}
           passHref
           target="_blank"
           rel="noopener noreferrer">

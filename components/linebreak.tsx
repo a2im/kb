@@ -14,7 +14,7 @@ export default function MyLineBreak(){
                 rotate: 0,
             }} 
             transition={{ duration: 2, delay: 0.25 }}
-            className="border-black max-w-3xl pb-4 relative -ml-[900px]"/>
+            className="border-black max-w-3xl pb-4 relative -ml-[900px] dark:border-white"/>
         </div>
         </>
     )

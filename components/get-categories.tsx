@@ -19,7 +19,7 @@ export function GetCategories({MainCategory}) {
         <ul className="md:lvl2 max-w-3xl relativemx-auto justify-evenly">
         {/* Map through the data */}
         {data?.kbCategories.data.map(kbCategories => (
-                <li key={kbCategories.id} className="text-stone-800 border-2 rounded-xl bg-stone-100 border-black">
+                <li key={kbCategories.id} className="text-stone-800 border-2 rounded-xl bg-neutral-100 border-black dark:bg-neutral-800 dark:text-neutral-50 dark:border-white">
                    <Link href={`/${MainCategory}/${kbCategories.attributes.Name}`} onClick={() => router.push(`/${MainCategory}/${kbCategories.attributes.Name}`)}><h3 className="text-xl hover:scale-[1.01] px-3 -mt-3">{kbCategories.attributes.Name}</h3></Link>
                 </li>
               )

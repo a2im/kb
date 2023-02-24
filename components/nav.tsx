@@ -20,7 +20,7 @@ export default function MyNavbar({children}) {
   useOnClickOutside(Navref, handleClickOutside)
   return (
     <>
-      <nav className="bg-stone-800 w-full fixed z-50">
+      <nav className="bg-a2imblue w-full fixed z-50">
         <div className="justify-between max-w-7xl mx-auto items-center md:flex">
           <div>
             <div className="flex items-center justify-between md:block">

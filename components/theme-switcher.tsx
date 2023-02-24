@@ -6,7 +6,7 @@ import { faSun, faMoon
  } from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeToggle() {
-    const [isEnabled, setIsEnabled] = useState(true);
+    const [isEnabled, setIsEnabled] = useState(false);
 
     useEffect(() => {
         // Pass in the isEnabled state
@@ -22,20 +22,29 @@ export default function ThemeToggle() {
         // Get all available styles
         const styles = getComputedStyle(document.body);
       
-          // Get the --black and --white variable values
+          // Get the variable values
         const black = styles.getPropertyValue("--black");
         const white = styles.getPropertyValue("--white");
         const red = styles.getPropertyValue("--red");
+        const grey = styles.getPropertyValue("--grey");
       
       const docEl = document.documentElement;
       if (isDarkEnabled) {
         docEl.style.setProperty("--background", black);
         docEl.style.setProperty("--foreground", white);
-        document.querySelector("html").classList.add("darkmode");
+        docEl.style.setProperty("--articlebackground", grey);
+        docEl.style.setProperty("--articleforeground", white);
+        document.querySelector("html").classList.add("dark");
+        document.querySelector("section")?.classList.add("dark");
+        document.querySelector(".navigation")?.classList.add("dark");
       } else {
         docEl.style.setProperty("--background", white);
         docEl.style.setProperty("--foreground", black);
-        document.querySelector("html").classList.remove("darkmode");
+        docEl.style.setProperty("--articlebackground", white);
+        docEl.style.setProperty("--articleforeground", grey);
+        document.querySelector("html").classList.remove("dark");
+        document.querySelector("section")?.classList.remove("dark");
+        document.querySelector(".navigation")?.classList.remove("dark");
       }};
     return (
       <label className="toggle-wrapper my-auto" htmlFor="toggle">
@@ -44,8 +53,8 @@ export default function ThemeToggle() {
           {isEnabled ? "Enable Light Mode" : "Enable Dark Mode"}
           </span>
           <div className="icons">
-          <FontAwesomeIcon icon={faSun} className="text-black"/>
-          <FontAwesomeIcon icon={faMoon} className="text-black"/>
+            <FontAwesomeIcon icon={faMoon} className="text-neutral-50"/>
+            <FontAwesomeIcon icon={faSun} className="text-neutral-900"/>
       </div>
           <input
             id="toggle"
