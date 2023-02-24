@@ -30,7 +30,7 @@ export default async function OperationsDevelopment({params}: { params: {
         <div className="grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden px-5">
         {/* Map through the data */}
         {posts?.data?.map(posts => (
-                <section key={posts.id} id="articlesection" className="articlesection border-2 rounded-xl p-10 border-black dark:border-white bg-neutral-100 dark:bg-gradient-to-tl from-neutral-800 to-neutral-700 dark:text-neutral-50">
+                <section key={posts.id} id={posts.attributes.Title} className="articlesection border-2 rounded-xl p-10 border-black dark:border-white bg-neutral-100 dark:bg-gradient-to-tl from-neutral-800 to-neutral-700 dark:text-neutral-50">
                   <h2 className="dark:text-neutral-50" >{posts.attributes.Title}</h2>
                   <MyLineBreak/>
                   <div className="max-w-4xl">

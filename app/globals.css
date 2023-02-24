@@ -137,7 +137,12 @@
     html.dark section a {
       color: #60a5fa
     }
-
+    html.dark .navigation a {
+      color: #60a5fa
+    }
+    section a {
+      color: blue
+    }
   h2 {
       font-family: Righteous;
       letter-spacing: 2px;
@@ -202,12 +207,6 @@ a:hover {
 .navigation a {
   color: blue;
 }
-
-.navigation.dark a {
-  color: #60a5fa;
-}
-
-
 
 .kbarticle link:hover {
   --tw-scale-x: 1.01;
