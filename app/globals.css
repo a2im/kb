@@ -23,6 +23,40 @@
   animation-fill-mode: forwards; 
 }
 
+.bottext pre { 
+  white-space: pre-wrap;
+  list-style: none;
+  padding-left: 0;
+  padding: 0;
+}
+
+.bottext code { 
+  white-space: pre-wrap;
+  list-style: none;
+  padding-left: 0;
+  padding: 0;
+}
+
+.bottext ol { 
+  list-style: none;
+  padding-left: 0;
+  padding: 0;
+}
+
+.bottext li { 
+  margin-top: 1em;
+  margin-bottom:1em;
+  font-weight: 100;
+  font-family: Comfortaa;
+}
+
+.bottext p { 
+line-height: normal
+}
+.bottext a { 
+  color: var(--a2imblue);
+  }
+
 
 .bggradient {
   background: linear-gradient(to bottom, #ff1827 5%, transparent 50%);
@@ -97,6 +131,7 @@
 
 /* end accordion styles */
 :root {
+  --a2imblue: #004BD9;
   --black: #171717;
   --grey: #262626;
   --white: #d4d4d4;

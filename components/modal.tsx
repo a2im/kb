@@ -39,7 +39,7 @@ export default function MyModal ({children}){
                 <motion.div
                 ref={Modalref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed border-4  w-96 shadow-2xl bottom-16 md:right-16 right-7"
+                className="fixed w-96 shadow-2xl bottom-16 md:right-16 right-7 rounded-lg overflow-hidden"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
