@@ -170,11 +170,21 @@ line-height: normal
     section a {
       color: blue
     }
+    h1 {
+      font-family: Righteous;
+      letter-spacing: 2px;
+      line-height: 1.2em;
+      font-size: 3vmax;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+  }
   h2 {
       font-family: Righteous;
       letter-spacing: 2px;
       line-height: 1.2em;
-      font-size: 3rem;
+      font-size: 2.2vmax;
       font-weight: 700;
       text-transform: uppercase;
       padding-top: 0.25em;
@@ -184,8 +194,8 @@ line-height: normal
     font-family: Righteous;
     letter-spacing: 2px;
     line-height: 1.2em;
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.5vmax;
+    font-weight: 700;
     text-transform: uppercase;
     padding-top: 1em;
     padding-bottom: 0.25em;
@@ -193,7 +203,6 @@ line-height: normal
   h4 {
       font-family: Righteous;
       font-size: 1.5rem;
-      padding-top: 1em;
       padding-bottom: 0.25em;
   }
   p {
@@ -203,7 +212,9 @@ line-height: normal
   li:hover > ul { display: block; }
   .lvl1 li { display: relative; position:relative; }
   .lvl2 { position: absolute; }
-  .lvl2 li { position: relative; }
+  .lvl2 li { 
+    position: relative;
+   }
   html::-webkit-scrollbar {
     display: none;
   }
@@ -219,6 +230,20 @@ line-height: normal
   .font-outline-4 {
     -webkit-text-stroke: 4px black;
   }
+  body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
 }
 
 a:hover {

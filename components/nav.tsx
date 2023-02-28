@@ -88,23 +88,33 @@ export default function MyNavbar({children}) {
               md:flex">
                 <li className="my-auto ">
                 <Link href={`/Operations`} onClick={() => router.push(`/Operations`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Operations</h3></Link>
-                <GetCategories MainCategory='Operations'/>
+                  <ul className="md:lvl2 max-w-3xl relative mx-auto justify-evenly">
+                    <GetCategories MainCategory='Operations' textstyle={"text-white"} listyle={"border-white border-4 rounded-xl bg-a2imblue p-3 m-2 hover:scale-105"}/>
+                  </ul>
                 </li>
                 <li className="my-auto ">
                 <Link href={`/Events`} onClick={() => router.push(`/Events`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Events</h3></Link>
-                <GetCategories MainCategory='Events'/>
+                <ul className="md:lvl2 max-w-3xl relative mx-auto justify-evenly">
+                <GetCategories MainCategory='Events'textstyle={"text-white"} listyle={"border-white border-4 rounded-xl bg-a2imblue p-3 m-2 hover:scale-105"}/>
+                </ul>
                 </li>
                 <li>
                 <Link href={`/Sales`} onClick={() => router.push(`/Sales`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Sales</h3></Link>
-                <GetCategories MainCategory='Sales'/>
+                <ul className="md:lvl2 max-w-3xl relative mx-auto justify-evenly text-white">
+                <GetCategories MainCategory='Sales'textstyle={"text-white"} listyle={"border-white border-4 rounded-xl bg-a2imblue p-3 m-2 hover:scale-105"}/>
+                </ul>
                 </li>
                 <li> 
                 <Link href={`/Marketing`} onClick={() => router.push(`/Marketing`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Marketing</h3></Link>
-                <GetCategories MainCategory='Marketing'/>
+                <ul className="md:lvl2 max-w-3xl relative mx-auto justify-evenly">
+                <GetCategories MainCategory='Marketing' textstyle={"text-white"} listyle={"border-white border-4 rounded-xl bg-a2imblue p-3 m-2 hover:scale-105"}/>
+                </ul>
                 </li>
                 <li>
                 <Link href={`/Human Resources`} onClick={() => router.push(`/Human Resources`)}><h3 className="-mt-3 text-xl px-2 whitespace-nowrap text-white">Human Resources</h3></Link>
-                <GetCategories MainCategory='Human Resources'/>
+                <ul className="md:lvl2 max-w-3xl relative mx-auto justify-evenly">
+                <GetCategories MainCategory='Human Resources' textstyle={"text-white"} listyle={"border-white border-4 rounded-xl bg-a2imblue p-3 m-2 hover:scale-105"}/>
+                </ul>
                 </li>
               </ul>
             </div> {children}

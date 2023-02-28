@@ -22,16 +22,16 @@ export default async function OperationsDevelopment({params}: { params: {
   var cleantitle = title.replace('%20',' ')
   return (
     <>
-    <h2 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl dark:text-neutral-50">{cleantitle}</h2>
+    <h1 className="mx-auto pt-20 pb-10 text-center drop-shadow-2xl dark:text-neutral-50">{cleantitle}</h1>
     <div className="flex flex-col-reverse md:flex-row max-w-5xl mx-auto">
       <div className="invisible md:visible md:display shrink">
     <ScrollNav posts={posts} KbName={cleantitle}/>
     </div>
-        <div className="grid grid-cols-0 max-w-3xl relative py-5 mx-auto justify-evenly gap-10 overflow-hidden px-5">
+        <div className="grid grid-cols-0 max-w-3xl relative mx-auto justify-evenly gap-10 overflow-hidden px-5">
         {/* Map through the data */}
         {posts?.data?.map(posts => (
-                <section key={posts.id} id={posts.attributes.Title} className="articlesection border-2 rounded-xl p-10 border-black dark:border-white bg-neutral-100 dark:bg-gradient-to-tl from-neutral-800 to-neutral-700 dark:text-neutral-50">
-                  <h2 className="dark:text-neutral-50" >{posts.attributes.Title}</h2>
+                <section key={posts.id} id={posts.attributes.Title} className="w-full py-5 flex flex-col articlesection border-2 rounded-xl px-10 pb-10 border-black dark:border-white bg-neutral-100 dark:bg-gradient-to-tl from-neutral-800 to-neutral-700 dark:text-neutral-50">
+                  <h2 className="dark:text-neutral-50 pt-5" >{posts.attributes.Title}</h2>
                   <MyLineBreak/>
                   <div className="max-w-4xl">
                   <span className="kbarticle"><ReactMarkdown className="line-break list-inside" remarkPlugins={[remarkGfm]}>{posts.attributes.Text}</ReactMarkdown></span>
