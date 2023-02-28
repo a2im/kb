@@ -3,7 +3,7 @@ import { authOptions } from 'pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import Image from 'next/image'
 import ThemeToggle from '@/components/theme-switcher'
-
+export const dynamic = 'force-dynamic'
 export default async function Home() {
   const session = await getServerSession(authOptions)
   return (

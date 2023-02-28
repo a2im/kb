@@ -1,7 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react'
+import { useSession } from 'next-auth/react';
 
 export default function Chatbot({interchanges}) {
+  const { data: session } = useSession()
   const [userQuestion, setUserQuestion] = useState('')
   const [allow, setAllow] = useState(false)
   const [interchange, setInterchange] = useState([])
@@ -44,12 +46,19 @@ export default function Chatbot({interchanges}) {
               <div key={i} className = "user flex flex-row my-2 w-full p-2">
               <span className = "w-2/3"></span>
               <span className = "w-1/3 bg-gray-100 p-2 rounded">
-               {chat.text}
+                <div className="flex-col">
+                  <h2 className="text-xs text-gray-400">{session.user.name}</h2>
+                  {chat.text}
+                </div>
+               
               </span>
             </div>
              :   
-              <div key={i} className = "bot bg-gray-100 w-1/2 lg:w-1/3  p-2 rounded">
+              <div key={i} className = "bot bg-gray-100 w-3/4  p-2 rounded">
+                <div className="flex flex-col">
+                <h2 className="text-xs text-gray-400">A2IM Assistant</h2>
                 <span dangerouslySetInnerHTML={createMarkup(chat.text)} />
+                </div>
               </div>
             ))}
             <div id="scrollTo"></div>
@@ -70,7 +79,7 @@ const createMarkup = (text) => {
 }
 
 export const tranformInterchanges = (interchanges, initial = false) => { 
-  let initialText = initial ? `<b>Welcome to my page, glad to have you here 🥰</b> <br/>
+  let initialText = initial ? `<b>Welcome to A2IM's Knowledge-Base, glad to have you here 🥰</b> <br/>
  Tell me what you would like to know: <br/> <br/> `: ''
   interchanges.data.map((e, i) => {
       initialText += `${(i+1)}. ${e.attributes.question} <br /> <br />`
@@ -82,10 +91,10 @@ export const searchInterchange = (interchanges, question) => {
   let result = interchanges.data.find(e => e.attributes.question.toLowerCase().includes(question.toLowerCase()))
   console.log(result?.attributes?.answer)
   if(result?.attributes?.answer === undefined ) 
-  return `Cant seem to understand your question, please try again 😔<br><br>
-    Here are the options again: <br/> <br/>
-    ${tranformInterchanges(interchanges)}`;
-  return result?.attributes?.answer
+  return`Cant seem to understand your question, please try again 😔<br/><br/>
+              Here are the options again: <br/> <br/>
+                  ${tranformInterchanges(interchanges)}`
+  else return result?.attributes?.answer
 };
 
 export const showBotTyping = async (setInterchange, prevState, setAllow) => {

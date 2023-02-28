@@ -6,7 +6,7 @@ import MyModal from '../components/modal'
 import { authOptions } from 'pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import Image from 'next/image'
-
+export const dynamic = 'force-dynamic'
 export default async function Home() {
   const session = await getServerSession(authOptions)
   return (
