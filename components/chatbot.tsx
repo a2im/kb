@@ -21,8 +21,8 @@ export default function Chatbot({interchanges}) {
    }])
       };
     initialBotTyping(setInterchange, setAllow);
+    scrollDown()  
    }, [interchanges])
-
    const handleSubmit = async (e) => {
     e.preventDefault()
     if(!userQuestion || !allow) return
@@ -31,11 +31,11 @@ export default function Chatbot({interchanges}) {
       owner: true,
       text: userQuestion
     }]
-  
     setInterchange(newInterchange)
     setUserQuestion('')
     setAllow(false)
     getBotAnswer(interchanges, setInterchange,  uQ, newInterchange, setAllow)
+    scrollDown()
   }
   return (
 <div className="flex flex-col font-mono items-center justify-center z-80">
@@ -122,16 +122,17 @@ export const showBotTyping = async (setInterchange, prevState, setAllow) => {
   scrollDown()
 }
 
-const scrollDown = () => {
-  document.getElementById('scrollTo').scrollIntoView({behavior: "smooth", block: "start"});
-}
 
 export const getBotAnswer = async (interchanges, setInterchange, question, prevState, setAllow) => {
   await showBotTyping(setInterchange, prevState, setAllow)
-
+  scrollDown()
   setInterchange([...prevState, {
     owner: false,
     text: searchInterchange(interchanges,question)
   }])
   scrollDown()
+}
+
+const scrollDown = () => {
+  document.getElementById('scrollTo').scrollIntoView({ behavior: "smooth", block: "end"});
 }
