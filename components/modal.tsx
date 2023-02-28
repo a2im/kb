@@ -34,18 +34,18 @@ export default function MyModal ({children}){
     };
     return (
         <>
-            <div className="z-10 flex fixed bottom-5 right-5 w-20 h-20 rounded-3xl bg-gradient-radial from-black via-transparent to-transparent">
+            <div className="max-h-2xl z-10 flex fixed bottom-5 right-5 w-20 h-20 rounded-3xl bg-gradient-radial from-black via-transparent to-transparent">
             {isModalOpen ? (
                 <motion.div
                 ref={Modalref}
                 onClick={(e) => e.stopPropagation()}
-                className="fixed border-4 p-5 modalinfo w-96 shadow-2xl bottom-16 md:right-16 right-7"
+                className="fixed border-4  w-[500px] shadow-2xl bottom-16 md:right-16 right-7"
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 >
-                {children}
+                    {children}
                 </motion.div>
                  ) : (
                 <button 

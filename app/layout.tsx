@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import AuthContext from '../components/next-auth-provider';
 import MyNavbar from '../components/nav'
 import LoginButton from '../components/login'
-import ModalInfo from '../components/modal-info'
+import Chatbot from '@/components/chatbot';
 import MyModal from '../components/modal'
 
 import React from 'react';
@@ -17,11 +17,23 @@ library.add(fas)
 
 export const runtime = 'nodejs'
 
-export default function RootLayout({
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_A2IMCMS_API_URL}/interchanges`, { next: { revalidate: 60 }});
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+  return res.json();
+}
+
+export default async function RootLayout({
   children
 }: {
   children: React.ReactNode
 }, pageProps: { session }) { 
+
+const interchanges = await getData();
+
   return (
     <html lang="en">
       <head/>
@@ -29,7 +41,7 @@ export default function RootLayout({
         <AuthContext>
       <Providers> 
       <MyNavbar><LoginButton/></MyNavbar>
-    <MyModal><ModalInfo/></MyModal>
+    <MyModal><Chatbot interchanges={interchanges}></Chatbot></MyModal>
         {children}
       </Providers>
       </AuthContext>

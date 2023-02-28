@@ -48,25 +48,17 @@
     position: relative;
 }
 
-
 .modalinfobg {
   position: absolute;
-  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   display: flex;
 }
- .modalinfo {
+.modalinfo {
   position: absolute;
 	background: black;
-	background-size: 400% 400%;
-  border-radius: 50px; 
-	animation: gradient 15s ease infinite;
-  padding: 8px;
   margin: auto;
-  align-items: stretch;
-  display: flex;
   z-index: 99;
  }
 

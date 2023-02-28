@@ -14,6 +14,7 @@ module.exports = {
     NEXT_AUTH_AWS_REGION: process.env.NEXT_AUTH_AWS_REGION,
     NEXT_AUTH_AWS_ACCESS_KEY: process.env.NEXT_AUTH_AWS_ACCESS_KEY,
     NEXT_AUTH_AWS_SECRET_KEY: process.env.NEXT_AUTH_AWS_SECRET_KEY,
+    NEXT_CMS_BASE_URL: process.env.NEXT_CMS_BASE_URL,
   },
   images: {
     domains: [
