@@ -343,50 +343,6 @@ a:hover {
   border-color: white;
 }
 
-.iwborder {
-  position: relative;
-}
-.iwborder::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50px; 
-  border-style: groove;
-  padding: 6px; 
-  background: white;
-  -webkit-mask: 
-     linear-gradient(#fff 0 0) content-box, 
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude; 
-}
-.iwborder2 {
-  position: relative;
-}
-.iwborder2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50px; 
-  border-style: groove;
-  padding: 6px; 
-  background: white;
-  -webkit-mask: 
-     linear-gradient(#fff 0 0) content-box, 
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude; 
-}
-
-.iwnavbar {
-	background: linear-gradient(-90deg, rgba(255, 24, 39, 1), black, rgba(255, 24, 39, 1));
-	background-size: 200% 200%;
-	animation: gradient 13s ease infinite;
-}
-
-.iwnavbar.li {
-  list-style: none;
-}
 
 @keyframes gradient {
 	0% {
@@ -400,44 +356,6 @@ a:hover {
 	}
 }
 
-.wp-block-buttons {
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  width: 50%;
-}
-.wp-block-button {
-  margin-left: 30px;
-  margin-right: 30px;
-  background:rgba(255, 251, 235, 0.9);
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding: 10px;
-  transition: all .2s ease-in-out;
-  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
-  font-style: bold;
-  align-items: middle;
-  flex-basis:  auto;
-}
-.wp-block-button:hover {
-  background-color: rgb(232 121 249);
-  transform: scale(1.02);
-  transform-origin: center; 
-}
-.wp-block-button__link {
-  text-decoration: none;
-}
-th.wp-block-table {
-  border: 1px solid black;
-}
-td.wp-block-table {
-  border: 1px solid black;
-}
-.wp-block-image {
-  padding: 10px;
-}
 .mygrow { 
   transition: all .2s ease-in-out; 
 }
@@ -523,26 +441,6 @@ td.wp-block-table {
 .footer-shadow:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
-
-.preload {
-  display: none;
-}
-
-.video-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-}
-
-.video-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
 
 * {
   box-sizing: border-box;

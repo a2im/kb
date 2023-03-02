@@ -1,4 +1,3 @@
-import Footer from '../footer'
 import { GetCategories } from '../../components/get-categories';
 
 export const dynamic = 'force-dynamic',
@@ -24,7 +23,6 @@ export default async function MainCategory({params}: { params: {
         </ul>
         </div>
         <div className="pb-96 md:pb-40 mb-20"></div>
-        <Footer/>
     </div>
     </>
   )

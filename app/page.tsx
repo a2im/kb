@@ -1,8 +1,3 @@
-import Footer from './footer'
-import MyNavbar from '../components/nav'
-import LoginButton from '../components/login'
-import ModalInfo from '../components/modal-info'
-import MyModal from '../components/modal'
 import { authOptions } from 'pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import Image from 'next/image'
@@ -35,7 +30,6 @@ export default async function Home() {
           <h2 className="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">Congrats, {session.user.name}!</h2>
           <p className="dark:text-white">You&apos;ve Discovered a <span className="animate-pulse">secret</span> A2IM Zone!</p>
         </div>
-        <Footer/>
     </div>
     </>
   )

@@ -117,7 +117,8 @@ export default function MyNavbar({children}) {
                 </ul>
                 </li>
               </ul>
-            </div> {children}
+            </div> 
+            {children}
           </div>
         </div>
       </nav>

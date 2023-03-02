@@ -9,6 +9,7 @@ import MyNavbar from '../components/nav'
 import LoginButton from '../components/login'
 import Chatbot from '@/components/chatbot';
 import MyModal from '../components/modal'
+import Footer from './footer';
 
 import React from 'react';
 
@@ -43,6 +44,7 @@ const interchanges = await getData();
       <MyNavbar><LoginButton/></MyNavbar>
     <MyModal><Chatbot interchanges={interchanges}></Chatbot></MyModal>
         {children}
+        <Footer/>
       </Providers>
       </AuthContext>
       </body>

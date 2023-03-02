@@ -1,4 +1,3 @@
-import Footer from '../../footer'
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm'
 import MyLineBreak from '@/components/linebreak'
@@ -41,7 +40,6 @@ export default async function OperationsDevelopment({params}: { params: {
             )}
         </div>
         </div>
-    <Footer/>
     </>
   )
 }

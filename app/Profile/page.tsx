@@ -41,7 +41,6 @@ export default async function Home() {
             Congrats, {session.user.name}!</h2>
           <p>You&apos;ve Discovered a <span className="animate-pulse">secret</span> A2IM Zone!</p>
         </div>
-        <Footer/>
     </div>
     </>
   )
