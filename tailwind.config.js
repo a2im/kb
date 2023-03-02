@@ -56,8 +56,11 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
-      'iwred': '#FF1827',
-      'a2imblue': '#004BD9'
+      'a2imred': '#FF1827',
+      'a2imblue': '#004bd9',
+      'a2impurple': '#971ea5',
+      'a2imyellow': '#ff8e00',
+      'a2imgreen': '#55e2a6',
     }),
     columns: {
       auto: 'auto',

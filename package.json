@@ -20,7 +20,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next-auth/dynamodb-adapter": "^3.0.0",
-    "@next/font": "^13.1.6",
     "@sendgrid/mail": "^7.7.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",

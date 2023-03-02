@@ -16,7 +16,6 @@ export default function Chatbot({interchanges}) {
       let initial = true
       setInterchange([{owner: false, text: ''}])
       setAllow(true)
-      scrollDown()    
       setInterchange([{
       owner: false,
       text: tranformInterchanges(interchanges, initial)

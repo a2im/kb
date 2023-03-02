@@ -16,6 +16,7 @@ export default function Footer() {
                 alt='a2im logo'
                 height={179}
                 width={400}
+                priority
                 style={{
                   maxWidth: "100%",
                   height: "auto"
